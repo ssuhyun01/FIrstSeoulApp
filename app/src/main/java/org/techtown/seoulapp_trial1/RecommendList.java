@@ -39,7 +39,7 @@ public class RecommendList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recommend_list);
 
         button = (Button) findViewById(R.id.button);
         text = (TextView) findViewById(R.id.text);
@@ -89,7 +89,7 @@ public class RecommendList extends AppCompatActivity {
                         if (checkBox[j].isChecked()) {
                             for (int k = 0; k < category[j].length; k++) {
                                 if (json3.getString("TITLE").contains(category[j][k]) || json3.getString("CONTENT").contains(category[j][k])) {
-                                    output += json3.getString("TITLE") + "\n" + json3.getString("CONTENT") + "\n\n";
+                                    output += json3.getString("TITLE") + "\n" + "작성자 : "+json3.getString("WRITER")+"\n"+"작성 날짜 : " +json3.getString("REG_DATE") +"\n\n"+"-----------------------------------------------------------------------------" +"\n\n";
                                 }
                             }
                         }
